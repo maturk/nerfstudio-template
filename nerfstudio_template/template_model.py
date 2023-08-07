@@ -3,6 +3,7 @@
 Currently this subclasses the Nerfacto model. Consider subclassing from the base Model.
 """
 from dataclasses import dataclass, field
+from typing import Type
 
 from nerfstudio.models.nerfacto import NerfactoModel, NerfactoModelConfig  # for subclassing Nerfacto
 from nerfstudio.models.base_model import Model, ModelConfig  # for custom Model
