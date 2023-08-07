@@ -1,0 +1,29 @@
+"""Template Model File
+
+Currently this subclasses the Nerfacto model. Consider subclassing from the base Model.
+"""
+from dataclasses import dataclass, field
+
+from nerfstudio.models.nerfacto import NerfactoModel, NerfactoModelConfig  # for subclassing Nerfacto
+from nerfstudio.models.base_model import Model, ModelConfig  # for custom Model
+
+
+@dataclass
+class TemplateModelConfig(NerfactoModelConfig):
+    """Template model configuration.
+
+    Add custom model configs as dataclass attributes."""
+
+    _target: Type = field(default_factory=lambda: TemplateModel)
+
+
+class TemplateModel(NerfactoModel):
+    """Template Model."""
+
+    config: TemplateModelConfig
+
+    def populate_modules(self):
+        super().populate_modules()
+
+    # TODO: Override any potential functions/methods to implement your own method
+    # or subclass from "Model" and define all mandatory fields.
